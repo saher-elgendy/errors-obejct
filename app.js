@@ -51,7 +51,6 @@ const isEmpty = (input) => {
 
 
 const validate = (inputValues) => {
-  console.log('ho', inputValues)
   let errors = {};
   if (isEmpty(inputValues.loan)) errors.loan = 'Loan Must not be empty';
   if (isEmpty(inputValues.interest)) errors.interest = 'Interest must not be empty';
