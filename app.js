@@ -41,8 +41,8 @@ inputs.forEach(input => {
   });
 });
 
-const isEmpty = (string) => {
-  if(string.trim() === '') return true;
+const isEmpty = (input) => {
+  if(input.trim() === '') return true;
   return false;
 }
 
