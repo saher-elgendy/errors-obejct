@@ -60,11 +60,8 @@ const validate = (inputValues) => {
 // console.log(errors)
 function calculateFinalResults(loadingImg, results) {
   const errors = validate(inputValues);
-
-  if (Object.keys(errors).length) {
-    if (errors.loan) alert('loan must not be empty')
-    if (errors.total) alert('total must not be empty')
-    if (errors.interest) alert('interest must not be empty')
+  const errorKeys = Object.keys(errors);
+  if (errorKeys.length) {
     // Hide results and loadingImg
     hideLoadingImg();
     hideResults();
@@ -74,8 +71,18 @@ function calculateFinalResults(loadingImg, results) {
 
     // Create errorDiv for warning
     const errorDiv = document.createElement('div');
-    errorDiv.className = 'errorDiv alert alert-danger';
-    errorDiv.appendChild(document.createTextNode(`${errors.loan}`));
+    errorDiv.className = 'errorDiv alert alert-danger'; 
+    const list = document.createElement('ul');
+
+    errorKeys.forEach(key => {
+      console.log(key)
+      let li = document.createElement('li')
+      li.textContent = errors[key];
+      list.appendChild(li);
+    })
+
+    errorDiv.appendChild(list)
+
     // Insert the error above the heading
     const card = document.querySelector('.card');
     const heading = document.querySelector('.heading');
