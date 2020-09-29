@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card card-body text-center my-4 cardContainer">
+            <h2 class="mb-4 heading">Loan Calculator</h2>
+            <!-- Requirements Form" -->
+            <form id="requirementsForm">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input type="number" name="loan" class="form-control inputLoanAmount" placeholder="Loan Amount"
+                  aria-label="Loan Amount" />
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">%</span>
+                </div>
+                <input type="number" name="interest" class="form-control inputInterest" placeholder="Interest" aria-label="Interest"/>
+              </div>
+              <div class="input-group mb-3">
+                <input type="number" name="total" class="form-control inputYearsToRepay" placeholder="Years To Repay"
+                  aria-label="Years To Repay" />
+              </div>
+              <div class="input-group mb-3">
+                <input type="submit"  value="Calculate" class="btn btn-dark btn-block btnCalculate" />
+              </div>
+            </form>
+            <!-- Loading image -->
+            <div class="loadingImg d-none">
+              <p class="text-danger font-weight-bold">calculating ...</p>
+              <img src="imgs/loading.gif" alt="loading" />
+            </div>
+            <!-- Results section -->
+            <section class="results d-none">
+              <h5>Results</h5>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Monthly Payment</span>
+                </div>
+                <input type="float" class="form-control inputMonthlyPayment" disabled />
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Total Payment</span>
+                </div>
+                <input type="float" class="form-control inputTotalPayment" disabled />
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Total Interest</span>
+                </div>
+                <input type="float" class="form-control inputTotalInterest" disabled />
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
