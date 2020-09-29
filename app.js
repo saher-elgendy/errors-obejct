@@ -65,7 +65,6 @@ function calculateFinalResults(loadingImg, results) {
     // Hide results and loadingImg
     hideLoadingImg();
     hideResults();
-
     // Remove ErrorDiv if it's already exists to prevent appear more than one warning
     removeErrorDiv();
 
@@ -75,7 +74,6 @@ function calculateFinalResults(loadingImg, results) {
     const list = document.createElement('ul');
 
     errorKeys.forEach(key => {
-      console.log(key)
       let li = document.createElement('li')
       li.textContent = errors[key];
       list.appendChild(li);
